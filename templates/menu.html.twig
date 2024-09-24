@@ -1,0 +1,17 @@
+<!-- Menu -->
+	<nav id="menu">
+		<ul class="links">
+			<li><a href="{{ path('home') }}">Home</a></li>
+			<li><a href="{{ path('app_site_index') }}">Site</a></li>
+			<li><a href="{{ path('app_user_index') }}">User</a></li>
+			<li><a href="{{ path('app_categorie_index') }}">Categorie</a></li>
+				{{ render(controller(
+					'App\\Controller\\CategorieController::view'
+				)) }}
+			
+		</ul>
+		<ul class="actions stacked">
+			<li><a href="#" class="button primary fit">Get Started</a></li>
+			<li><a href="#" class="button fit">Log In</a></li>
+		</ul>
+	</nav>

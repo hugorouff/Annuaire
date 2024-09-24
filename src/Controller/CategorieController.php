@@ -14,6 +14,13 @@ use Symfony\Component\Routing\Attribute\Route;
 #[Route('/categorie')]
 final class CategorieController extends AbstractController
 {
+    public function view(CategorieRepository $categorieRepository): Response
+    {
+        return $this->render('categorie/cat.html.twig', [
+            'categories' => $categorieRepository->findAll(),
+        ]);
+    }
+
     #[Route(name: 'app_categorie_index', methods: ['GET'])]
     public function index(CategorieRepository $categorieRepository): Response
     {
